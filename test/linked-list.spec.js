@@ -21,13 +21,11 @@ describe('LinkedList', () => {
             expect(list._tail).to.be.an.instanceof(Node)
             expect(list._head).to.be.an.instanceof(Node)
         });
-
+		
         it('should add new data to the end of list', () => {
-            const list = new LinkedList();
-
-            list.append(123);
-            list.append(413);
-
+			const list = new LinkedList();
+			list.append(123);
+			list.append(413);
             expect(list.length).to.equal(2);
             expect(list.tail()).to.equal(413);
             expect(list.head()).to.equal(123);

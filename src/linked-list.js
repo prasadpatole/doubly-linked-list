@@ -1,21 +1,46 @@
 const Node = require('./node');
 
 class LinkedList {
-    constructor() {}
+	
+    constructor() {
+		this.length = 0;
+		this._head = null;
+		this._tail = null;
+	}
 
-    append(data) {}
+    append(data) {		
+		if(this.length > 0){
+			this._tail = new Node(data, this._tail);
+		}
+		else{			
+			var node = new Node(data);
+			this._head = node;
+			this._tail = node;			
+		}
+		this.length++;
+	}
 
-    head() {}
+    head() {
+		return this._head.data;
+	}
 
-    tail() {}
+    tail() {
+		return this._tail.data;
+	}
 
     at(index) {}
 
     insertAt(index, data) {}
 
-    isEmpty() {}
+    isEmpty() {
+		return this.length <= 0;
+	}
 
-    clear() {}
+    clear() {
+		this.length = 0;
+		this._head.data = null;
+		this._tail.data = null;
+	}
 
     deleteAt(index) {}
 
